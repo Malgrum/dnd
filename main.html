@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de Rôle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>Jeu de Donjon</h1>
+        <div id="map"></div> <!-- Affichage de la carte -->
+        <div id="player-info">
+            <p><strong>Nom:</strong> <span id="player-name">John Doe</span></p>
+            <p><strong>Points de vie:</strong> <span id="player-hp">100</span></p>
+        </div>
+        <div id="actions">
+            <button onclick="action('move')">Se déplacer</button>
+            <button onclick="action('attack')">Attaquer</button>
+            <button onclick="action('equip')">S'équiper</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
