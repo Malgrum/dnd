@@ -134,4 +134,40 @@ class Donjon {
 public class Jeu {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Donjon
+        Donjon donjon = new Donjon();
+
+        System.out.println("Bienvenue dans le jeu Donjons et Dragons !");
+        System.out.println("Combien de personnages voulez-vous créer ?");
+        int nombreDePersonnages = scanner.nextInt();
+        scanner.nextLine();
+
+        for (int i = 0; i < nombreDePersonnages; i++) {
+            System.out.println("Création du personnage " + (i + 1) + ":");
+            System.out.print("Nom : ");
+            String nom = scanner.nextLine();
+            System.out.print("Race (Elfe, Halfelin, Humain, Nain) : ");
+            String race = scanner.nextLine();
+            System.out.print("Classe (Clerc, Guerrier, Magicien, Roublard) : ");
+            String classe = scanner.nextLine();
+
+            Personnage personnage = new Personnage(nom, race, classe);
+            donjon.ajouterPersonnage(personnage);
+        }
+
+        System.out.println("Combien de monstres voulez-vous ajouter ?");
+        int nombreDeMonstres = scanner.nextInt();
+        scanner.nextLine(); 
+
+        for (int i = 0; i < nombreDeMonstres; i++) {
+            System.out.println("Création du monstre " + (i + 1) + ":");
+            System.out.print("Espèce : ");
+            String espece = scanner.nextLine();
+
+            Monstre monstre = new Monstre(espece, i + 1);
+            donjon.ajouterMonstre(monstre);
+        }
+
+        donjon.demarrer();
+        scanner.close();
+    }
+}
