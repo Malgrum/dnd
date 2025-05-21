@@ -9,13 +9,11 @@ public class Jeu extends Application {
 
     @Override
     public void start(Stage stage) {
-        // Création d'une fenêtre JavaFX avec WebView
         StackPane root = new StackPane();
         WebView webView = new WebView();
-        webView.getEngine().load("main.html"); // Charge le fichier HTML
+        webView.getEngine().load("main.html");L
         root.getChildren().add(webView);
 
-        // Configuration de la scène
         Scene scene = new Scene(root, 800, 600);
         stage.setTitle("Jeu à la Wargroove");
         stage.setScene(scene);
